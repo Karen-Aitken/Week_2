@@ -25,5 +25,12 @@ mutate(BOM_data_new, dif_temp = max- min) %>% group_by(Month) %>%
   summarise(n_dif_temp=mean(dif_temp))
 
 
+# question 3
 
-  
+BOM_stations <- read_csv("BOM-stations.csv") 
+BOM_stations
+View(BOM_stations)
+?gather
+# gather the data into 3 columns  station ID number , info 
+BOM_stations_long <- BOM_stations %>% 
+  gather(info, Station_ID, state)
