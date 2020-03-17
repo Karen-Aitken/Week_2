@@ -32,5 +32,9 @@ BOM_stations
 View(BOM_stations)
 ?gather
 # gather the data into 3 columns  station ID number , info 
-BOM_stations_long <- BOM_stations %>% 
-  gather(info, Station_ID, state)
+BOM_stations_long  <- 
+  gather(BOM_stations, key = "Station_number", "data", -info)
+View(BOM_stations_long)
+#spread the data one row for each station
+
+
