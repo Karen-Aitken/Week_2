@@ -81,7 +81,7 @@ Station_mean_solar <- group_by(BOM_data_temp_solar, Station_number) %>%
 Station_mean_solar
 Long_compare <- inner_join(Station_mean_solar, BOM_Stations_wide, by="Station_number") %>% 
 filter(lon==min(lon) |lon==max(lon))
-  #summarise(mean_solar_lon=mean(mean_solar_exposure)) 
+  
   
   arrange(lon)
 Long_compare
